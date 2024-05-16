@@ -58,11 +58,6 @@ protobuf==4.25.3
 psutil==5.9.8
 pure-eval==0.2.2
 pyarrow==15.0.2
-pyasn1==0.5.1
-pyasn1-modules==0.3.0
-pywin32==306
-pyzmq==25.1.2
-referencing==0.34.0
 requests==2.31.0
 requests-oauthlib==1.4.0
 rich==13.7.1
