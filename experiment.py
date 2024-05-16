@@ -86,6 +86,7 @@ def get_dataframe(ticker):
                        "accept-language": "en-US,en;q=0.9",
                        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
                        "cookie":"_ga=GA1.1.1832904179.1695643771; _ga_PJSKY6CFJH=GS1.1.1698408521.20.1.1698410308.60.0.0; nsit=3uG2YklLyNMMSNtDbIctc-Qi; nseappid=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkubnNlIiwiYXVkIjoiYXBpLm5zZSIsImlhdCI6MTcxNTg1NjAxOCwiZXhwIjoxNzE1ODYzMjE4fQ.pVLneCc6ftJWgLq9ZigPd6vFu5XP09RvzzsBmBj-ctE; bm_sz=AD103C921C62CA0B48439C83004C18DB~YAAQfW4/F+Lbp3WPAQAApQ79gBdNKVPByib3/DtLOrfd3D6E+Z6VWSR3S0fA11hg0sxuIvY5f6JbuagyW5K78XQWHuWAFXRnT1zcbETx3525Jwe6dA/v5Q4VVY9aqwUWwb3vCJJGICgZX0Bts2ElWwuPIdl5PiyPOBykFcPZOPbkFnMrZV5OnfUoRSe1qu/zBTNp/b1+3lLSR1scoDgpC2q5B+km6DIlI26CuQUdM1obkCEcG1q02PMb2HwwGKVpEwqVVzinLELMt0w+c4P127v4tFsWY4k87G+xVbXRoFFpxqrybDL8lc+6mhIPKDhO9p6nsL3XhmjXwt2jsWzEhxwkClsXVf/BI4A0ETeTW3+ez6EoOXwyxxZ5S62+dHXOvLyAW/tIxwrp/PxiHfw=~3354949~3356996; defaultLang=en; ak_bmsc=43D5C3E7C0ED0B13E1843309DFD67C14~000000000000000000000000000000~YAAQfW4/Fwbcp3WPAQAAuhv9gBd3Zx/0LvoPXlZtPDKlI0bqqyocw+y2uKCVmlNZ+doamhk18zmtYEJNaqEH03iT6zUL/wQTMcfXfBpl/O9hhQVA1XOK8UzrPtrKcyob9THI/JS5MfdzjPJKzkd+71MbT1Uf25DetPq0UU1PGNVS0HXjUZQReqNkO6ZzVDrLkJIymReFubNIFcQIUUFig0+2tMafwIcXjZihN6HHbO4fEpkNX156RNdNR8aDWATxKhQpg9FTd9bgEwEOiuuEeRBm513r/Fb3qCCGmdLIzcnaPQ0nnVBs2mIdrLI8BkKx1ArrNNlsLRN7omJ5TPPBqCkAnCfo8v26CpQ0M9jBRkL3SQdEXw5uVLFBUj33L2/fmE/oopRK0DfeLhklQB/oEcYzuFFqT0Ik+qmbzY9i8+QoguKikr4rP5S9pX1AjXw+LZ8FoFGcy3PZKsnPU8d3Sw==; _abck=EE00CD6FB797BDCFA4B799A810836AA8~0~YAAQfW4/Fxzcp3WPAQAA1x/9gAuacW2FiDm1pki7upljOxbOAeItk53aK23FIqA4ICS45C+uCc0xZBnELm7NXt6cPdxpA8J9ZpbqC8DMXgLwWrSVGzojvG5a1XUbeS7uIoRLlUsFYNe/gxQNkDk4dWEK5LzKS1aYQ6Argv4NILYq/lBdBNWcQ6PQL+VWpWG4btBaqAkJp+AM+xYeTK8/trjsw9xU5EfJSDmEkCGcr2AYs6XPijbB5xZQjo1QeH0doOwEPpShKH524p1oHWO+OzVJTOe74HEAzHM5jrJmUmcqTi1ualfrzWLHNl6FaH0UxUNHs+0Udox6ptCBB9u93pe26r7309UngAX2kPKXqXkaEIAx/v2d+6tLwHJ6L4dZB4Yfl8HHCXc5D16gLgVW3yIVcumw2mh0tEw=~-1~-1~-1; _ga_QJZ4447QD3=GS1.1.1715856030.4.0.1715856030.0.0.0; _ga_87M7PJ3R97=GS1.1.1715856021.7.1.1715856030.0.0.0; bm_sv=A8135AFFA186992095E3A96CE2D4B4A8~YAAQfW4/F5bcp3WPAQAA+jn9gBcYlvwqFpJH1cMx69dgTceFqDJEYaQv+hUQTbmSV4TNb+jnfppKyIS8L03d7sKEMP4UZsnRB9iRTfBqceea+eloovHgpke8oIG8VUV2zdZGAv56TuIJecZ2ZvK9STTdAXyLGuaOEg1NWQJluW/QyPal1lpCUmuVSEMRzbDs9+0c5EskgCsNfKVzlTPVifsRGZ4ip4oeHy8FpVEjhkYlekMNStJvfwl2PRAbq0O08J0=~1"
+
                        }
 
             session = requests.Session()
@@ -258,150 +259,154 @@ def get_dataframe(ticker):
 # print(output_ce)
 # print(output_pe)
 
-shares = pd.read_csv("FNO Stocks - All FO Stocks List, Technical Analysis Scanner.csv")
-share_list = list(shares["Symbol"])
-selected_option = st.selectbox("Share List", share_list)
+@st.experimental_fragment
+def frag_table(table_number):
+    shares = pd.read_csv("FNO Stocks - All FO Stocks List, Technical Analysis Scanner.csv")
+    share_list = list(shares["Symbol"])
+    selected_option = st.selectbox("Share List", share_list, key="share_list"+str(table_number))
 
-if selected_option in share_list:
-    ticker = selected_option
-    output_ce, output_pe = get_dataframe(ticker)
+    if selected_option in share_list:
+        ticker = selected_option
+        output_ce, output_pe = get_dataframe(ticker)
 
-    ########################################## Stock LTP and Matrix #######################################
-    stock_ltp = 0.0
-    for price in current_market_price(ticker, exchange):
-        stock_ltp = price
-        break
-
-
-    # ********************************** MATRIX ******************************************
-    l1, l2 = len(output_ce), len(output_pe)
-    if l1 < l2:
-        fin_len = l1
-    else:
-        fin_len = l2
-    matrix = np.zeros((fin_len, 4))
-    df = pd.DataFrame(matrix, columns=["Call Ratio", "Call Effective Ratio", "Put Ratio", "Put Effective Ratio"])
-
-    for i in range(len(df)):
-        df.at[i, "Call Ratio"] = (output_ce["lastPrice"].iloc[i] / stock_ltp) * 100
-        df.at[i, "Call Effective Ratio"] = (((output_ce["strikePrice"].iloc[i] - stock_ltp) + output_ce["lastPrice"].iloc[i]) / stock_ltp) * 100
-        df.at[i, "Put Ratio"] = (output_pe["lastPrice"].iloc[i] / stock_ltp) * 100
-        df.at[i, "Put Effective Ratio"] = (((stock_ltp - output_pe["strikePrice"].iloc[i]) + output_pe["lastPrice"].iloc[i]) / stock_ltp) * 100
-
-    # ************************************************************************************
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        output_ce = output_ce.style.set_properties(**{'background-color':'palegreen'})
-        st.dataframe(output_ce)
-    with col2:
-        output_pe = output_pe.style.set_properties(**{'background-color': 'antiquewhite'})
-        st.dataframe(output_pe)
-    with col3:
-        df = df.style.set_properties(**{'background-color': 'paleturquoise'})
-        st.dataframe(df)
-
-    st.write(f'{ticker} LTP:', stock_ltp)
+        ########################################## Stock LTP and Matrix #######################################
+        stock_ltp = 0.0
+        for price in current_market_price(ticker, exchange):
+            stock_ltp = price
+            break
 
 
+        # ********************************** MATRIX ******************************************
+        l1, l2 = len(output_ce), len(output_pe)
+        if l1 < l2:
+            fin_len = l1
+        else:
+            fin_len = l2
+        matrix = np.zeros((fin_len, 4))
+        df = pd.DataFrame(matrix, columns=["Call Ratio", "Call Effective Ratio", "Put Ratio", "Put Effective Ratio"])
 
+        for i in range(len(df)):
+            df.at[i, "Call Ratio"] = (output_ce["lastPrice"].iloc[i] / stock_ltp) * 100
+            df.at[i, "Call Effective Ratio"] = (((output_ce["strikePrice"].iloc[i] - stock_ltp) + output_ce["lastPrice"].iloc[i]) / stock_ltp) * 100
+            df.at[i, "Put Ratio"] = (output_pe["lastPrice"].iloc[i] / stock_ltp) * 100
+            df.at[i, "Put Effective Ratio"] = (((stock_ltp - output_pe["strikePrice"].iloc[i]) + output_pe["lastPrice"].iloc[i]) / stock_ltp) * 100
+
+        # ************************************************************************************
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            output_ce = output_ce.style.set_properties(**{'background-color':'palegreen'})
+            st.dataframe(output_ce)
+        with col2:
+            output_pe = output_pe.style.set_properties(**{'background-color': 'antiquewhite'})
+            st.dataframe(output_pe)
+        with col3:
+            df = df.style.set_properties(**{'background-color': 'paleturquoise'})
+            st.dataframe(df)
+
+        st.write(f'{ticker} LTP:', stock_ltp)
+
+
+frag_table(1)
+frag_table(2)
+frag_table(3)
 #*************************************************ONE******************************************************
 
-
-shares_1 = pd.read_csv("FNO Stocks - All FO Stocks List, Technical Analysis Scanner.csv")
-share_list_1 = list(shares_1["Symbol"])
-selected_option_1 = st.selectbox("Share List", share_list_1, key = "share_list_1")
-
-if selected_option_1 in share_list_1:
-    ticker_1 = selected_option_1
-    output_ce_1, output_pe_1 = get_dataframe(ticker_1)
-
-    ########################################## Stock LTP and Matrix #######################################
-    stock_ltp_1 = 0.0
-    for price in current_market_price(ticker_1, exchange):
-        stock_ltp_1 = price
-        break
-
-
-    # ********************************** MATRIX ******************************************
-    l1_1, l2_1 = len(output_ce_1), len(output_pe_1)
-    if l1_1 < l2_1:
-        fin_len_1 = l1_1
-    else:
-        fin_len_1 = l2_1
-    matrix_1 = np.zeros((fin_len_1, 4))
-    df_1 = pd.DataFrame(matrix_1, columns=["Call Ratio", "Call Effective Ratio", "Put Ratio", "Put Effective Ratio"])
-
-    for i in range(len(df_1)):
-        df_1.at[i, "Call Ratio"] = (output_ce_1["lastPrice"].iloc[i] / stock_ltp_1) * 100
-        df_1.at[i, "Call Effective Ratio"] = (((output_ce_1["strikePrice"].iloc[i] - stock_ltp_1) + output_ce_1["lastPrice"].iloc[i]) / stock_ltp_1) * 100
-        df_1.at[i, "Put Ratio"] = (output_pe_1["lastPrice"].iloc[i] / stock_ltp_1) * 100
-        df_1.at[i, "Put Effective Ratio"] = (((stock_ltp_1 - output_pe_1["strikePrice"].iloc[i]) + output_pe_1["lastPrice"].iloc[i]) / stock_ltp_1) * 100
-
-    # ************************************************************************************
-
-    col1_1, col2_1, col3_1 = st.columns(3)
-
-    with col1_1:
-        output_ce_1 = output_ce_1.style.set_properties(**{'background-color': 'palegreen'})
-        st.dataframe(output_ce_1)
-    with col2_1:
-        output_pe_1 = output_pe_1.style.set_properties(**{'background-color': 'antiquewhite'})
-        st.dataframe(output_pe_1)
-    with col3_1:
-        df_1 = df_1.style.set_properties(**{'background-color': 'paleturquoise'})
-        st.dataframe(df_1)
-
-    st.write(f'{ticker_1} LTP:', stock_ltp_1)
-
-
-
-
-
-#*************************************************TWO*********************************************
-
-shares_2 = pd.read_csv("FNO Stocks - All FO Stocks List, Technical Analysis Scanner.csv")
-share_list_2 = list(shares_2["Symbol"])
-selected_option_2 = st.selectbox("Share List", share_list_2, key = "share_list_2")
-
-if selected_option_2 in share_list_2:
-    ticker_2 = selected_option_2
-    output_ce_2, output_pe_2 = get_dataframe(ticker_2)
-
-    ########################################## Stock LTP and Matrix #######################################
-    stock_ltp_2 = 0.0
-    for price in current_market_price(ticker_2, exchange):
-        stock_ltp_2 = price
-        break
-
-
-    # ********************************** MATRIX ******************************************
-    l1_2, l2_2 = len(output_ce_2), len(output_pe_2)
-    if l1_2 < l2_2:
-        fin_len_2 = l1_2
-    else:
-        fin_len_2 = l2_2
-    matrix_2 = np.zeros((fin_len_2, 4))
-    df_2 = pd.DataFrame(matrix_2, columns=["Call Ratio", "Call Effective Ratio", "Put Ratio", "Put Effective Ratio"])
-
-    for i in range(len(df_2)):
-        df_2.at[i, "Call Ratio"] = (output_ce_2["lastPrice"].iloc[i] / stock_ltp_2) * 100
-        df_2.at[i, "Call Effective Ratio"] = (((output_ce_2["strikePrice"].iloc[i] - stock_ltp_2) + output_ce_2["lastPrice"].iloc[i]) / stock_ltp_2) * 100
-        df_2.at[i, "Put Ratio"] = (output_pe_2["lastPrice"].iloc[i] / stock_ltp_2) * 100
-        df_2.at[i, "Put Effective Ratio"] = (((stock_ltp_2 - output_pe_2["strikePrice"].iloc[i]) + output_pe_2["lastPrice"].iloc[i]) / stock_ltp_2) * 100
-
-    # ************************************************************************************
-    col1_2, col2_2, col3_2 = st.columns(3)
-
-    with col1_2:
-        output_ce_2 = output_ce_2.style.set_properties(**{'background-color': 'palegreen'})
-        st.dataframe(output_ce_2)
-    with col2_2:
-        output_pe_2 = output_pe_2.style.set_properties(**{'background-color': 'antiquewhite'})
-        st.dataframe(output_pe_2)
-    with col3_2:
-        df_2 = df_2.style.set_properties(**{'background-color': 'paleturquoise'})
-        st.dataframe(df_2)
-
-    st.write(f'{ticker_2} LTP:', stock_ltp_2)
-
+#
+# shares_1 = pd.read_csv("FNO Stocks - All FO Stocks List, Technical Analysis Scanner.csv")
+# share_list_1 = list(shares_1["Symbol"])
+# selected_option_1 = st.selectbox("Share List", share_list_1, key = "share_list_1")
+#
+# if selected_option_1 in share_list_1:
+#     ticker_1 = selected_option_1
+#     output_ce_1, output_pe_1 = get_dataframe(ticker_1)
+#
+#     ########################################## Stock LTP and Matrix #######################################
+#     stock_ltp_1 = 0.0
+#     for price in current_market_price(ticker_1, exchange):
+#         stock_ltp_1 = price
+#         break
+#
+#
+#     # ********************************** MATRIX ******************************************
+#     l1_1, l2_1 = len(output_ce_1), len(output_pe_1)
+#     if l1_1 < l2_1:
+#         fin_len_1 = l1_1
+#     else:
+#         fin_len_1 = l2_1
+#     matrix_1 = np.zeros((fin_len_1, 4))
+#     df_1 = pd.DataFrame(matrix_1, columns=["Call Ratio", "Call Effective Ratio", "Put Ratio", "Put Effective Ratio"])
+#
+#     for i in range(len(df_1)):
+#         df_1.at[i, "Call Ratio"] = (output_ce_1["lastPrice"].iloc[i] / stock_ltp_1) * 100
+#         df_1.at[i, "Call Effective Ratio"] = (((output_ce_1["strikePrice"].iloc[i] - stock_ltp_1) + output_ce_1["lastPrice"].iloc[i]) / stock_ltp_1) * 100
+#         df_1.at[i, "Put Ratio"] = (output_pe_1["lastPrice"].iloc[i] / stock_ltp_1) * 100
+#         df_1.at[i, "Put Effective Ratio"] = (((stock_ltp_1 - output_pe_1["strikePrice"].iloc[i]) + output_pe_1["lastPrice"].iloc[i]) / stock_ltp_1) * 100
+#
+#     # ************************************************************************************
+#
+#     col1_1, col2_1, col3_1 = st.columns(3)
+#
+#     with col1_1:
+#         output_ce_1 = output_ce_1.style.set_properties(**{'background-color': 'palegreen'})
+#         st.dataframe(output_ce_1)
+#     with col2_1:
+#         output_pe_1 = output_pe_1.style.set_properties(**{'background-color': 'antiquewhite'})
+#         st.dataframe(output_pe_1)
+#     with col3_1:
+#         df_1 = df_1.style.set_properties(**{'background-color': 'paleturquoise'})
+#         st.dataframe(df_1)
+#
+#     st.write(f'{ticker_1} LTP:', stock_ltp_1)
+#
+#
+#
+#
+#
+# #*************************************************TWO*********************************************
+#
+# shares_2 = pd.read_csv("FNO Stocks - All FO Stocks List, Technical Analysis Scanner.csv")
+# share_list_2 = list(shares_2["Symbol"])
+# selected_option_2 = st.selectbox("Share List", share_list_2, key = "share_list_2")
+#
+# if selected_option_2 in share_list_2:
+#     ticker_2 = selected_option_2
+#     output_ce_2, output_pe_2 = get_dataframe(ticker_2)
+#
+#     ########################################## Stock LTP and Matrix #######################################
+#     stock_ltp_2 = 0.0
+#     for price in current_market_price(ticker_2, exchange):
+#         stock_ltp_2 = price
+#         break
+#
+#
+#     # ********************************** MATRIX ******************************************
+#     l1_2, l2_2 = len(output_ce_2), len(output_pe_2)
+#     if l1_2 < l2_2:
+#         fin_len_2 = l1_2
+#     else:
+#         fin_len_2 = l2_2
+#     matrix_2 = np.zeros((fin_len_2, 4))
+#     df_2 = pd.DataFrame(matrix_2, columns=["Call Ratio", "Call Effective Ratio", "Put Ratio", "Put Effective Ratio"])
+#
+#     for i in range(len(df_2)):
+#         df_2.at[i, "Call Ratio"] = (output_ce_2["lastPrice"].iloc[i] / stock_ltp_2) * 100
+#         df_2.at[i, "Call Effective Ratio"] = (((output_ce_2["strikePrice"].iloc[i] - stock_ltp_2) + output_ce_2["lastPrice"].iloc[i]) / stock_ltp_2) * 100
+#         df_2.at[i, "Put Ratio"] = (output_pe_2["lastPrice"].iloc[i] / stock_ltp_2) * 100
+#         df_2.at[i, "Put Effective Ratio"] = (((stock_ltp_2 - output_pe_2["strikePrice"].iloc[i]) + output_pe_2["lastPrice"].iloc[i]) / stock_ltp_2) * 100
+#
+#     # ************************************************************************************
+#     col1_2, col2_2, col3_2 = st.columns(3)
+#
+#     with col1_2:
+#         output_ce_2 = output_ce_2.style.set_properties(**{'background-color': 'palegreen'})
+#         st.dataframe(output_ce_2)
+#     with col2_2:
+#         output_pe_2 = output_pe_2.style.set_properties(**{'background-color': 'antiquewhite'})
+#         st.dataframe(output_pe_2)
+#     with col3_2:
+#         df_2 = df_2.style.set_properties(**{'background-color': 'paleturquoise'})
+#         st.dataframe(df_2)
+#
+#     st.write(f'{ticker_2} LTP:', stock_ltp_2)
+#
